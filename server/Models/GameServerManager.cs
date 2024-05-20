@@ -1,20 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 public class GameServerManager
 {
 	private List<GameServerInfo> _gameServers;
 
-	public GameServerManager()
+	public GameServerManager(AppConfig appConfig)
 	{
 		_gameServers = new List<GameServerInfo>();
+
+		// Add default game servers
+		appConfig.DefaultInstances.ForEach(gameServer =>
+		{
+			if (!int.TryParse(gameServer.Port, out var gameServerPort))
+				throw new Exception($"Invalid port number [{gameServer.Port}] for default game server {gameServer.InstanceName}");
+
+			_gameServers.Add(new GameServerInfo(gameServer.InstanceName, gameServer.IP, gameServerPort));
+		});
 	}
 
 	public void UpdateGameServer(string instanceName, int playersOnline)
 	{
-		// Implementation of UpdateGameServer...
-		throw new NotImplementedException();
+		var gameServer = _gameServers.FirstOrDefault(x => x.InstanceName == instanceName);
+		if (gameServer == null) return;
+		gameServer.PlayersOnline = playersOnline;
 	}
 
 	public GameServerInfo? GetGameInstance(string instanceName)
