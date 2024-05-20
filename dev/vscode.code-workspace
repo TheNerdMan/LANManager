@@ -1,14 +1,33 @@
 {
 	"folders": [
 		{
+			"name": "API",
 			"path": "../server"
 		},
 		{
+			"name": "UI",
 			"path": "../client"
 		},
 		{
-			"path": "."
+			"name": "Dev",
+			"path": "../dev"
+		},
+		{
+			"name": "Project Root",
+			"path": ".."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			"**/server": true,
+			"**/client": true,
+			"**/dev": true
+		}
+	}
 }
