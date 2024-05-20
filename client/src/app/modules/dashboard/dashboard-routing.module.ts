@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
-import { NftComponent } from './pages/nft/nft.component';
-import { PodcastComponent } from './pages/podcast/podcast.component';
+import { NftComponent } from './nft/pages/nft.component';
+import { PodcastComponent } from './podcast/pages/podcast.component';
 
 const routes: Routes = [
   {
