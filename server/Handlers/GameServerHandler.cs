@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 
 public class GameServerHandlers
 {
-	public async Task HandleGameServerCommunicationAsync(TcpClient client)
+	public Task HandleGameServerCommunicationAsync(TcpClient client)
 	{
 		// Implementation of HandleGameServerCommunicationAsync...
 		throw new NotImplementedException();

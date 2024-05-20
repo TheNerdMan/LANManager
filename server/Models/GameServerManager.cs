@@ -7,7 +7,7 @@ public class GameServerManager
 		_gameServers = new List<GameServerInfo>();
 
 		// Add default game servers
-		appConfig.DefaultInstances.ForEach(gameServer =>
+		appConfig.DefaultInstances?.ForEach(gameServer =>
 		{
 			if (!int.TryParse(gameServer.Port, out var gameServerPort))
 				throw new Exception($"Invalid port number [{gameServer.Port}] for default game server {gameServer.InstanceName}");

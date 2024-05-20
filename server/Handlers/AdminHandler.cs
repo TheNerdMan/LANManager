@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Http;
 
 public class AdminHandlers
 {
-	public async Task HandleAdminNotifications(HttpContext context)
+	public Task HandleAdminNotifications(HttpContext context)
 	{
 		// Implementation of HandleAdminNotifications...
 		throw new NotImplementedException();
 	}
 
-	public async Task NotifyAdmins(string message)
+	public Task NotifyAdmins(string message)
 	{
 		// Implementation of NotifyAdmins...
 		throw new NotImplementedException();

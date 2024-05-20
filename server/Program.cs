@@ -13,7 +13,9 @@ builder.Services.AddSignalR();
 // AppSettings
 AppConfig appConfiguration = new AppConfig
 {
+#pragma warning disable CS8601 // Possible null reference assignment.
 	DefaultInstances = builder.Configuration.GetSection("AppConfig:DefaultInstances").Get<List<DefaultInstance>>()
+#pragma warning restore CS8601 // Possible null reference assignment.
 };
 
 builder.Services.AddSingleton(appConfiguration);
